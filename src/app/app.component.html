@@ -1,6 +1,8 @@
 <div>
-<div id="header">
+<div id="header" *ngIf="user">
 <app-navbar></app-navbar>
+<a class="nav-item nav-link" routerLink="/users" routerLinkActive="active">Users</a>
+<a class="nav-item nav-link" (click)="logout()">Logout</a>
 </div>
 <div id="content">
   <router-outlet></router-outlet>

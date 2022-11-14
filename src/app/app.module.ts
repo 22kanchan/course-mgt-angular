@@ -1,7 +1,7 @@
 //Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatListModule } from '@angular/material/list';
@@ -32,8 +32,6 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 //Component
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
 import { FaqComponent } from './faq/faq.component';
 import { CourseComponent } from './course/course.component';
 import { SubjectComponent } from './subject/subject.component';
@@ -43,12 +41,17 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { CourseUpdateComponent } from './course-update/course-update.component';
+import { AlertComponent } from './alert/alert.component';
+
+//Helpers
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    SignupComponent,
     FaqComponent,
     CourseComponent,
     SubjectComponent,
@@ -57,7 +60,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     NavbarComponent,
     FooterComponent,
     HomeComponent,
-    SidebarComponent
+    SidebarComponent,
+    CourseUpdateComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -91,7 +96,13 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     MdbCarouselModule,
     MatTableModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+
+        // provider used to create fake backend
+        fakeBackendProvider
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
