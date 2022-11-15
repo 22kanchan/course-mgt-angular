@@ -16,7 +16,7 @@ export class AccountService {
         private router: Router,
         private http: HttpClient
     ) {
-        this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
+        this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')!));
         this.user = this.userSubject.asObservable();
     }
 
@@ -37,7 +37,7 @@ export class AccountService {
     logout() {
         // remove user from local storage and set current user to null
         localStorage.removeItem('user');
-        this.userSubject.next(null);
+        this.userSubject.next(null!);
         this.router.navigate(['/account/login']);
     }
 

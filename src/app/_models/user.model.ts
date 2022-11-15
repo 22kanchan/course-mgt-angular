@@ -1,7 +1,8 @@
 export class User {
-  id: any;
-    token!: User;
-  firstName: any;
-  lastName: any;
-  username: any;
+  id: string | undefined;
+  username: string | undefined;
+  password: string | undefined;
+  firstName: string | undefined;
+  lastName: string | undefined;
+  token: string | undefined;
 }

@@ -48,6 +48,12 @@ import { AlertComponent } from './alert/alert.component';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { AchitectureComponent } from './achitecture/achitecture.component';
+import { ComputerComponent } from './computer/computer.component';
+import { MechElectComponent } from './mech-elect/mech-elect.component';
+import { MgtComponent } from './mgt/mgt.component';
+import { ArtsComponent } from './arts/arts.component';
+import { ScienceComponent } from './science/science.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +69,12 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
     SidebarComponent,
     CourseUpdateComponent,
     AlertComponent,
+    AchitectureComponent,
+    ComputerComponent,
+    MechElectComponent,
+    MgtComponent,
+    ArtsComponent,
+    ScienceComponent,
   ],
   imports: [
     BrowserModule,

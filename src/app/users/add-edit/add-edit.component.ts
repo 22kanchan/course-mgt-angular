@@ -46,11 +46,7 @@ export class AddEditComponent implements OnInit {
         if (!this.isAddMode) {
             this.accountService.getById(this.id)
                 .pipe(first())
-                .subscribe(x => {
-                    this.f['firstName'].setValue(x.firstName);
-                    this.f['lastName'].setValue(x.lastName);
-                    this.f['username'].setValue(x.username);
-                });
+                .subscribe(x => this.form.patchValue(x));
         }
   }
 // convenience getter for easy access to form fields
@@ -78,29 +74,32 @@ export class AddEditComponent implements OnInit {
     private createUser() {
         this.accountService.register(this.form.value)
             .pipe(first())
-            .subscribe(
-                data => {
+            .subscribe({
+                next: () => {
                     this.alertService.success('User added successfully', { keepAfterRouteChange: true });
-                    this.router.navigate(['.', { relativeTo: this.route }]);
+                    this.router.navigate(['../'], { relativeTo: this.route });
                 },
-                error => {
+                error: error => {
                     this.alertService.error(error);
                     this.loading = false;
-                });
+                }
+            });
     }
 
     private updateUser() {
         this.accountService.update(this.id, this.form.value)
             .pipe(first())
-            .subscribe(
-                data => {
+            .subscribe({
+                next: () => {
                     this.alertService.success('Update successful', { keepAfterRouteChange: true });
-                    this.router.navigate(['..', { relativeTo: this.route }]);
+                    this.router.navigate(['../../'], { relativeTo: this.route });
                 },
-                error => {
+                error: (error: string) => {
                     this.alertService.error(error);
                     this.loading = false;
-                });
+                }
+            });
     }
-}
+    }
+
 

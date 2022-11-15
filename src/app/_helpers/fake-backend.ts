@@ -4,19 +4,15 @@ import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 // array in local storage for registered users
-let users = JSON.parse(localStorage.getItem('users')) || [];
+const usersKey = 'Registered Users';
+let users = JSON.parse(localStorage.getItem(usersKey)!) || [];
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const { url, method, headers, body } = request;
 
-        // wrap in delayed observable to simulate server api call
-        return of(null)
-            .pipe(mergeMap(handleRoute))
-            .pipe(materialize()) // call materialize and dematerialize to ensure delay even if an error is thrown (https://github.com/Reactive-Extensions/RxJS/issues/648)
-            .pipe(delay(500))
-            .pipe(dematerialize());
+        return handleRoute();
 
         function handleRoute() {
             switch (true) {
@@ -42,13 +38,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
         function authenticate() {
             const { username, password } = body;
-            const user = users.find(x => x.username === username && x.password === password);
+            const user = users.find((x: { username: any; password: any; }) => x.username === username && x.password === password);
             if (!user) return error('Username or password is incorrect');
             return ok({
-                id: user.id,
-                username: user.username,
-                firstName: user.firstName,
-                lastName: user.lastName,
+                ...basicDetails(user),
                 token: 'fake-jwt-token'
             })
         }
@@ -56,33 +49,33 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         function register() {
             const user = body
 
-            if (users.find(x => x.username === user.username)) {
+            if (users.find((x: { username: any; }) => x.username === user.username)) {
                 return error('Username "' + user.username + '" is already taken')
             }
 
-            user.id = users.length ? Math.max(...users.map(x => x.id)) + 1 : 1;
+            user.id = users.length ? Math.max(...users.map((x: { id: any; }) => x.id)) + 1 : 1;
             users.push(user);
-            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem(usersKey, JSON.stringify(users));
             return ok();
         }
 
         function getUsers() {
             if (!isLoggedIn()) return unauthorized();
-            return ok(users);
+            return ok(users.map((x: any) => basicDetails(x)));
         }
 
         function getUserById() {
             if (!isLoggedIn()) return unauthorized();
 
-            const user = users.find(x => x.id === idFromUrl());
-            return ok(user);
+            const user = users.find((x: { id: number; }) => x.id === idFromUrl());
+            return ok(basicDetails(user));
         }
 
         function updateUser() {
             if (!isLoggedIn()) return unauthorized();
 
             let params = body;
-            let user = users.find(x => x.id === idFromUrl());
+            let user = users.find((x: { id: number; }) => x.id === idFromUrl());
 
             // only update password if entered
             if (!params.password) {
@@ -91,7 +84,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             // update and save user
             Object.assign(user, params);
-            localStorage.setItem('users', JSON.stringify(users));
+            localStorage.setItem(usersKey, JSON.stringify(users));
 
             return ok();
         }
@@ -99,23 +92,31 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         function deleteUser() {
             if (!isLoggedIn()) return unauthorized();
 
-            users = users.filter(x => x.id !== idFromUrl());
-            localStorage.setItem('users', JSON.stringify(users));
+            users = users.filter((x: { id: number; }) => x.id !== idFromUrl());
+            localStorage.setItem(usersKey, JSON.stringify(users));
             return ok();
         }
 
         // helper functions
 
-        function ok(body?) {
+        function ok(body?: { token?: string; id: any; username: any; firstName: any; lastName: any; } | undefined) {
             return of(new HttpResponse({ status: 200, body }))
+                .pipe(delay(500)); // delay observable to simulate server api call
         }
 
-        function error(message) {
-            return throwError({ error: { message } });
+        function error(message: string) {
+            return throwError({ error: { message } })
+                .pipe(materialize(), delay(500), dematerialize()); // call materialize and dematerialize to ensure delay even if an error is thrown (https://github.com/Reactive-Extensions/RxJS/issues/648);
         }
 
         function unauthorized() {
-            return throwError({ status: 401, error: { message: 'Unauthorised' } });
+            return throwError({ status: 401, error: { message: 'Unauthorized' } })
+                .pipe(materialize(), delay(500), dematerialize());
+        }
+
+        function basicDetails(user: { id: any; username: any; firstName: any; lastName: any; }) {
+            const { id, username, firstName, lastName } = user;
+            return { id, username, firstName, lastName };
         }
 
         function isLoggedIn() {

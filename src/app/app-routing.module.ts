@@ -8,8 +8,11 @@ import { HomeComponent } from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { FaqComponent } from './faq/faq.component';
+import { AuthGuard } from './_helpers/auth.gaurd';
 
 
+const accountModule = () => import('./account/account.module').then(x => x.AccountModule);
+const usersModule = () => import('./users/users.module').then(x => x.UsersModule);
 
 
 const routes: Routes = [
@@ -44,7 +47,12 @@ component: CourseDetailsComponent
 {
 path:'faq',
 component: FaqComponent
-}
+},
+{ path: 'users', loadChildren: usersModule, canActivate: [AuthGuard] },
+    { path: 'account', loadChildren: accountModule },
+
+    // otherwise redirect to home
+    { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

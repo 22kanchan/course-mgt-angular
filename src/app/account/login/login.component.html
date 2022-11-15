@@ -1,4 +1,4 @@
-<section  style="background-color: #9A616D;">
+<section  style="background-color: #54B4D3;padding-bottom: 90px;">
     <div class="container py-5">
       <div class="row d-flex justify-content-center align-items-center">
         <div class="col col-xl-10">
@@ -30,7 +30,7 @@
                     </div>
   
                     <a class="small text-muted" href="#!">Forgot password?</a>
-                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account? <a href="/signup"
+                    <p class="mb-5 pb-lg-2" style="color: #393f81;">Don't have an account?<a href="/signup"
                         style="color: #393f81;">Register here</a></p>
                     <a href="#!" class="small text-muted">Terms of use.</a>
                     <a href="#!" class="small text-muted">Privacy policy</a>
@@ -44,3 +44,31 @@
       </div>
     </div>
   </section>
+  <!-- <div class="card">
+    <h4 class="card-header">Login</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                    <div *ngIf="f.username.errors.required">Username is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                    <div *ngIf="f.password.errors.required">Password is required</div>
+                </div>
+            </div>
+            <div class="form-group">
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <a routerLink="../signup" class="btn btn-link">Register</a>
+            </div>
+        </form>
+    </div>
+</div> -->
