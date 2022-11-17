@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ReactiveFormsModule } from '@angular/forms';
 import { UsersRoutingModule } from './users-routing.module';
+import { ListComponent } from './list/list.component';
 import { AddEditComponent } from './add-edit/add-edit.component';
-import { UsersListComponent } from './users-list/users-list.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
   declarations: [
+    ListComponent,
     AddEditComponent,
-    UsersListComponent
+    LayoutComponent
   ],
   imports: [
     CommonModule,
     UsersRoutingModule,
-    FormsModule,
     ReactiveFormsModule
   ]
 })

@@ -54,6 +54,10 @@ import { MechElectComponent } from './mech-elect/mech-elect.component';
 import { MgtComponent } from './mgt/mgt.component';
 import { ArtsComponent } from './arts/arts.component';
 import { ScienceComponent } from './science/science.component';
+import { AddFaqComponent } from './faq/add-faq/add-faq.component';
+import { EditFaqComponent } from './faq/edit-faq/edit-faq.component';
+import { DeleteFaqComponent } from './faq/delete-faq/delete-faq.component';
+
 
 @NgModule({
   declarations: [
@@ -75,6 +79,9 @@ import { ScienceComponent } from './science/science.component';
     MgtComponent,
     ArtsComponent,
     ScienceComponent,
+    AddFaqComponent,
+    EditFaqComponent,
+    DeleteFaqComponent,
   ],
   imports: [
     BrowserModule,
