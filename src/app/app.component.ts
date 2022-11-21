@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AccountService } from './_services/account.service';
 import { User } from './_models/user.model';
-
+import { Role } from './_models/role';
 
 
 @Component({
@@ -16,6 +16,10 @@ export class AppComponent {
     constructor(private accountService: AccountService) {
         this.accountService.user.subscribe(x => this.user = x);
     }
+
+    get isAdmin() {
+      return this.user && this.user.role === Role.Admin;
+  }
 
     logout() {
         this.accountService.logout();

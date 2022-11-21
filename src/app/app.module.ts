@@ -32,7 +32,6 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 
 //Component
 import { AppComponent } from './app.component';
-import { FaqComponent } from './faq/faq.component';
 import { CourseComponent } from './course/course.component';
 import { SubjectComponent } from './subject/subject.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -54,15 +53,11 @@ import { MechElectComponent } from './mech-elect/mech-elect.component';
 import { MgtComponent } from './mgt/mgt.component';
 import { ArtsComponent } from './arts/arts.component';
 import { ScienceComponent } from './science/science.component';
-import { AddFaqComponent } from './faq/add-faq/add-faq.component';
-import { EditFaqComponent } from './faq/edit-faq/edit-faq.component';
-import { DeleteFaqComponent } from './faq/delete-faq/delete-faq.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FaqComponent,
     CourseComponent,
     SubjectComponent,
     ProfileComponent,
@@ -79,9 +74,6 @@ import { DeleteFaqComponent } from './faq/delete-faq/delete-faq.component';
     MgtComponent,
     ArtsComponent,
     ScienceComponent,
-    AddFaqComponent,
-    EditFaqComponent,
-    DeleteFaqComponent,
   ],
   imports: [
     BrowserModule,

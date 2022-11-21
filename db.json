@@ -1,0 +1,34 @@
+{
+  "faq": [
+    {
+      "id": 1,
+      "question": "Is there a crash course available ?",
+      "answer": "Depends on which course u want to enroll in"
+    },
+    {
+      "id": 2,
+      "question": "How to get the details of the subjects are there in particular course?",
+      "answer": "You can visit our detailed website of course there u will get the details."
+    },
+    {
+      "id": 3,
+      "question": "What is the fees of the courses and duration?",
+      "answer": "You click on particular category of course there u will get the details."
+    },
+    {
+      "id": 4,
+      "question": "kfvnsdl",
+      "answer": "dsklcmsdklcm"
+    },
+    {
+      "id": 5,
+      "question": "hi",
+      "answer": "hello"
+    },
+    {
+      "id": 6,
+      "question": "sds",
+      "answer": "dacad"
+    }
+  ]
+}
