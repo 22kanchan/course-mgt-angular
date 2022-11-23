@@ -60,8 +60,24 @@
   ],
   "subjects": [
     {
-      "subjectsId": 1,
+      "id": 1,
       "subjectName": "Digital Logic and Circuit"
+    },
+    {
+      "id": 2,
+      "subjectName": "Analog Circuit"
+    },
+    {
+      "id": 3,
+      "subjectName": "Python"
+    },
+    {
+      "id": 4,
+      "subjectName": "Java"
+    },
+    {
+      "id": 5,
+      "subjectName": "Microprocessor and chip Configuration"
     }
   ]
 }

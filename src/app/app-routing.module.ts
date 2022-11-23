@@ -27,7 +27,7 @@ const routes: Routes = [
 {  path:'users', loadChildren:usersModule, canActivate:[AuthGuard]},
 {  path:'account', loadChildren:accountModule },
 {  path:'course', loadChildren:courseModule },
-{  path:'subject', loadChildren:subjectModule },  
+{  path:'subjects', loadChildren:subjectModule },  
 ];
 
 @NgModule({
