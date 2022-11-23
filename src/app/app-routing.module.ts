@@ -13,17 +13,21 @@ import { RegisterComponent } from './account/register/register.component';
 const accountModule = () => import('./account/account.module').then(x =>x.AccountModule);
 const usersModule = () => import ('./users/users.module').then(x => x.UsersModule);
 const faqModule = () => import ('./faq/faq.module').then(x => x.FaqModule);
+const courseModule =() => import ('./course-details/course-details.module').then(x =>x.CourseDetailsModule);
+const subjectModule =() => import ('./subject-details/subject-details.module').then(x =>x.SubjectDetailsModule);
 
 const routes: Routes = [
  
 {  path:'', component: HomeComponent },
 {  path:'profile', component: ProfileComponent },
-{  path:'course',  component: CourseComponent },
+{  path:'course-categories',  component: CourseComponent },
 {  path:'login', component: LoginComponent },
 {  path:'register', component: RegisterComponent },
 {  path:'faq', loadChildren:faqModule },
 {  path:'users', loadChildren:usersModule, canActivate:[AuthGuard]},
-{  path:'account', loadChildren:accountModule },  
+{  path:'account', loadChildren:accountModule },
+{  path:'course', loadChildren:courseModule },
+{  path:'subject', loadChildren:subjectModule },  
 ];
 
 @NgModule({

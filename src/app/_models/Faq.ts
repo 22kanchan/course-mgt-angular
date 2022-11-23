@@ -1,4 +1,3 @@
-
 export interface Faq {
     [x: string]: any;
     id: number;

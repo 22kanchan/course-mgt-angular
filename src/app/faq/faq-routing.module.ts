@@ -4,7 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { LayoutComponent } from './layout/layout.component';
 import { FaqListComponent } from './faq-list/faq-list.component';
-import { AddEditFaqComponent } from './add--faq/add-edit-faq.component';
+import { AddEditFaqComponent } from './add-edit-faq/add-edit-faq.component';
 import { EditFaqComponent } from './edit-faq/edit-faq.component';
 
 const routes: Routes = [

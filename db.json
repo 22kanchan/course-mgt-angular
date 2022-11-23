@@ -28,22 +28,34 @@
   ],
   "course": [
     {
-      "courseId": 1,
-      "courseName": "BTech(Electronincs)",
-      "subjects": [
-        {
-          "subjectId": 1,
-          "subjectName": "Digital Logic and Circuit"
-        },
-        {
-          "subjectId": 2,
-          "subjectName": "Analog Electronics"
-        },
-        {
-          "subjectId": 3,
-          "subjectName": "Electromagnetic Theory"
-        }
-      ]
+      "id": 1,
+      "courseName": "BTech",
+      "courseCategory": "Electronics and Communication",
+      "courseCost": 50000
+    },
+    {
+      "id": 2,
+      "courseName": "Btech",
+      "courseCategory": "Mechanical Engineering",
+      "courseCost": 80000
+    },
+    {
+      "id": 4,
+      "courseName": "BCA",
+      "courseCategory": "Computer application",
+      "courseCost": 40000
+    },
+    {
+      "id": 6,
+      "courseName": "MCA ",
+      "courseCategory": "Computer application",
+      "courseCost": 60000
+    },
+    {
+      "id": 7,
+      "courseName": "BBA",
+      "courseCategory": "Management ",
+      "courseCost": 60000
     }
   ],
   "subjects": [

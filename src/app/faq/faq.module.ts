@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { FaqRoutingModule } from './faq-routing.module';
 import { LayoutComponent } from './layout/layout.component';
 import { FaqListComponent } from './faq-list/faq-list.component';
-import { AddEditFaqComponent } from './add--faq/add-edit-faq.component';
+import { AddEditFaqComponent } from './add-edit-faq/add-edit-faq.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
