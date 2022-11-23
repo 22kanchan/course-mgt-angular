@@ -33,47 +33,29 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 //Component
 import { AppComponent } from './app.component';
 import { CourseComponent } from './course/course.component';
-import { SubjectComponent } from './subject/subject.component';
 import { ProfileComponent } from './profile/profile.component';
-import { CourseDetailsComponent } from './course-details/course-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
-import { CourseUpdateComponent } from './course-update/course-update.component';
 import { AlertComponent } from './alert/alert.component';
 
 //Helpers
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
-import { AchitectureComponent } from './achitecture/achitecture.component';
-import { ComputerComponent } from './computer/computer.component';
-import { MechElectComponent } from './mech-elect/mech-elect.component';
-import { MgtComponent } from './mgt/mgt.component';
-import { ArtsComponent } from './arts/arts.component';
-import { ScienceComponent } from './science/science.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CourseComponent,
-    SubjectComponent,
     ProfileComponent,
-    CourseDetailsComponent,
     NavbarComponent,
     FooterComponent,
     HomeComponent,
     SidebarComponent,
-    CourseUpdateComponent,
     AlertComponent,
-    AchitectureComponent,
-    ComputerComponent,
-    MechElectComponent,
-    MgtComponent,
-    ArtsComponent,
-    ScienceComponent,
   ],
   imports: [
     BrowserModule,

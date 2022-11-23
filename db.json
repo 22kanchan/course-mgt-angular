@@ -16,9 +16,40 @@
       "answer": "You click on particular category of course there u will get the details."
     },
     {
-      "id": 6,
-      "question": "sds",
-      "answer": "dacad"
+      "id": 4,
+      "question": "huono",
+      "answer": "nd ckjsdcdojnd"
+    },
+    {
+      "id": 5,
+      "question": "dcad",
+      "answer": "dwfvsd"
+    }
+  ],
+  "course": [
+    {
+      "courseId": 1,
+      "courseName": "BTech(Electronincs)",
+      "subjects": [
+        {
+          "subjectId": 1,
+          "subjectName": "Digital Logic and Circuit"
+        },
+        {
+          "subjectId": 2,
+          "subjectName": "Analog Electronics"
+        },
+        {
+          "subjectId": 3,
+          "subjectName": "Electromagnetic Theory"
+        }
+      ]
+    }
+  ],
+  "subjects": [
+    {
+      "subjectsId": 1,
+      "subjectName": "Digital Logic and Circuit"
     }
   ]
 }
