@@ -30,7 +30,6 @@ import { LayoutComponent } from './layout/layout.component';
     FormsModule,
     MatListModule,
     NgxMatSelectSearchModule,
-    BrowserAnimationsModule,
     MatFormFieldModule,
     MatSelectModule
   ]

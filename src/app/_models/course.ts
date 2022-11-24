@@ -5,6 +5,6 @@ export interface Course {
     courseCategory: string;
     courseCost: number;
     courseDuration: string;
-    courseSubjects: string;
+    courseSubjects: Array<number>;
 
 }

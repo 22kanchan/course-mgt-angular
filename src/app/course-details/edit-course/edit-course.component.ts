@@ -15,7 +15,7 @@ courseForm: Course = {
   courseCategory: '',
   courseDuration: '',
   courseCost: 0,
-  courseSubjects: ''
+  courseSubjects: []
 }
   constructor(
     private route : ActivatedRoute,
