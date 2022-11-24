@@ -30,6 +30,7 @@ import { MdbScrollspyModule } from 'mdb-angular-ui-kit/scrollspy';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { MdbTooltipModule } from 'mdb-angular-ui-kit/tooltip';
 import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
+import { CommonModule } from '@angular/common';
 
 //Component
 import { AppComponent } from './app.component';
@@ -61,6 +62,7 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     BrowserAnimationsModule,
     MdbAccordionModule,
     MdbCarouselModule,

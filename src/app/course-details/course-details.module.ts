@@ -1,13 +1,11 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-
 
 import { CourseDetailsRoutingModule } from './course-details-routing.module';
 import { CourseListComponent } from './course-list/course-list.component';
@@ -24,15 +22,14 @@ import { LayoutComponent } from './layout/layout.component';
     LayoutComponent
   ],
   imports: [
-    CommonModule,
     CourseDetailsRoutingModule,
+    CommonModule,
     ReactiveFormsModule,
     FormsModule,
     MatListModule,
     NgxMatSelectSearchModule,
-    BrowserAnimationsModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
   ]
 })
 export class CourseDetailsModule { }
