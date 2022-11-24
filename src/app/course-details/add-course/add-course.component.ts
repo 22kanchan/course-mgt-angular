@@ -66,5 +66,4 @@ export class AddCourseComponent implements OnInit {
     }
     console.log(this.listSubjects)
   }
-
 }
