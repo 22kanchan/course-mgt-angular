@@ -15,7 +15,9 @@ export class AddCourseComponent implements OnInit {
     id: 0,
     courseName: '',
     courseCategory: '',
-    courseCost: 0
+    courseCost: 0,
+    courseDuration: '',
+    courseSubjects: ''
   }
 
   constructor(private courseService: CourseService,
@@ -35,4 +37,5 @@ export class AddCourseComponent implements OnInit {
     })
   }
 
+  typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 }

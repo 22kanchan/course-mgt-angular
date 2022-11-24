@@ -8,12 +8,16 @@
         <tr>
           <th scope="col">Id</th>
           <th scope="col">Subject Name</th>
+          <th scope="col">Subject Description</th>
+          <th scope="col">Subject Category</th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let item of allSubjects">
           <th scope="row">{{ item.id }}</th>
           <td>{{ item.subjectName }}</td>
+          <td>{{ item.subjectDescription }}</td>
+          <td>{{ item.subjectCategory }}</td>
           <td>
             <a class="btn btn-primary" [routerLink]="['/subjects/editSubjects', item.id]">Edit</a>
             <button type="button" (click)="openDeleteModal(item.id)" class="btn btn-danger">Delete</button>

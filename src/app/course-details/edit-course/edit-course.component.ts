@@ -13,7 +13,9 @@ courseForm: Course = {
   id: 0,
   courseName: '',
   courseCategory: '',
-  courseCost: 0
+  courseDuration: '',
+  courseCost: 0,
+  courseSubjects: ''
 }
   constructor(
     private route : ActivatedRoute,

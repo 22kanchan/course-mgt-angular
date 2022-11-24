@@ -10,7 +10,22 @@
         <input type="text" name="category" [(ngModel)] = "courseForm.courseCategory" class="form-control" id="txtQuantity" />
       </div>
       <div class="mb-3">
-        <label for="txtPrice" class="form-label">Price</label>
+        <label for="txtQuantity" class="form-label">Subjects</label>
+        <mat-selection-list #shoes>
+          <mat-list-option *ngFor="let shoe of typesOfShoes">
+            {{shoe}}
+          </mat-list-option>
+        </mat-selection-list>        
+        <p>
+          Options selected: {{shoes.selectedOptions.selected.length}}
+        </p>
+      </div>
+      <div class="mb-3">
+        <label for="txtQuantity" class="form-label">Duration</label>
+        <input type="text" name="category" [(ngModel)] = "courseForm.courseDuration" class="form-control" id="txtQuantity" />
+      </div>
+      <div class="mb-3">
+        <label for="txtPrice" class="form-label">Cost</label>
         <input type="number" name="cost" [(ngModel)] = "courseForm.courseCost" class="form-control" id="txtPrice" />
       </div>
       <button type="button" (click)="create()" class="btn btn-primary">Create</button>

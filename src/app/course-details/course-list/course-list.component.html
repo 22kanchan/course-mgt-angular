@@ -10,6 +10,7 @@
           <th scope="col">Id</th>
           <th scope="col">Course-Name</th>
           <th scope="col">Course-Category</th>
+          <th scope="col">Course-Duration</th>
           <th scope="col">Cost</th>
         </tr>
       </thead>
@@ -18,6 +19,7 @@
           <th scope="row">{{ item.id }}</th>
           <td>{{ item.courseName }}</td>
           <td>{{ item.courseCategory }}</td>
+          <td>{{ item.courseDuration }}</td>
           <td>{{ item.courseCost }}</td>
           <td>
             <a class="btn btn-primary" [routerLink]="['/course/editCourse', item.id]">Edit</a>

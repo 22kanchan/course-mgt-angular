@@ -15,6 +15,8 @@ export class AddSubjectComponent implements OnInit {
   subjectForm: Subjects ={
     id: 0,
     subjectName: '',
+    subjectCategory: '',
+    subjectDescription: ''
   }
   constructor( private subjectService: SubjectService,
     private router: Router) { }

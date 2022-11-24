@@ -30,14 +30,16 @@
     {
       "id": 1,
       "courseName": "BTech",
-      "courseCategory": "Electronics and Communication",
-      "courseCost": 50000
+      "courseCategory": "Architecture",
+      "courseCost": 50000,
+      "courseDuration": "5 years"
     },
     {
       "id": 2,
       "courseName": "Btech",
-      "courseCategory": "Mechanical Engineering",
-      "courseCost": 80000
+      "courseCategory": "Mechanical",
+      "courseCost": 80000,
+      "courseDuration": "5 years"
     },
     {
       "id": 4,

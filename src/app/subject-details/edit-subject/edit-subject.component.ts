@@ -13,7 +13,9 @@ import { SubjectService } from 'src/app/_services/subject.service';
 export class EditSubjectComponent implements OnInit {
 subjectForm: Subjects ={
   id: 0,
-  subjectName: ''
+  subjectName: '',
+  subjectCategory: '',
+  subjectDescription: ''
 }
   constructor(
     private route: ActivatedRoute,

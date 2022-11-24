@@ -4,4 +4,7 @@ export interface Course {
     courseName: string;
     courseCategory: string;
     courseCost: number;
+    courseDuration: string;
+    courseSubjects: string;
+
 }
