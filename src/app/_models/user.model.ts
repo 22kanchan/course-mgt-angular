@@ -13,5 +13,6 @@ export class User {
   address!: string ;
   pincode!: number ;
   dob!: Date;
+  course!: string;
   role!: Role;
 }

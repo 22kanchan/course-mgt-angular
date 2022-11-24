@@ -6,6 +6,13 @@
             <th style="width: 30%">First Name</th>
             <th style="width: 30%">Last Name</th>
             <th style="width: 30%">Username</th>
+            <th style="width: 30%">Mother's Name</th>
+            <th style="width: 30%">Father's Name</th>
+            <th style="width: 30%">Address</th>
+            <th style="width: 30%">Pincode</th>
+            <!-- <th style="width: 30%">Course</th> -->
+            <th style="width: 30%">Email</th>
+            <th style="width: 30%">Dob</th>
             <th style="width: 10%"></th>
         </tr>
     </thead>
@@ -14,6 +21,14 @@
             <td>{{user.firstName}}</td>
             <td>{{user.lastName}}</td>
             <td>{{user.username}}</td>
+            <td>{{user.mothersName}}</td>
+            <td>{{user.fathersName}}</td>
+            <td>{{user.address}}</td>
+            <td>{{user.pincode}}</td>
+            <!-- <td>{{user.course}</td> -->
+            <td>{{user.email}}</td>
+            <td>{{user.dob}}</td>
+            
             <td style="white-space: nowrap">
                 <a routerLink="edit/{{user.id}}" class="btn btn-sm btn-primary mr-1">Edit</a>
                 <button (click)="deleteUser(user.id)" class="btn btn-sm btn-danger btn-delete-user" [disabled]="user.isDeleting">

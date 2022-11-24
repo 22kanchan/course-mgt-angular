@@ -20,6 +20,7 @@ users: any=null;
     .pipe(first())
     .subscribe(users => this.users = users);
   }
+  
   deleteUser(id: string) {
     const user = this.users.find((x: { id: string; }) => x.id === id);
     user.isDeleting = true;

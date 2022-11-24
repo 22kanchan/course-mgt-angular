@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Course } from 'src/app/_models/course';
 import { CourseService } from 'src/app/_services/course.service';
-
+import { SubjectService } from 'src/app/_services/subject.service';
+import { Subjects } from 'src/app/_models/subjects';
 
 declare var window: any;
  
@@ -15,9 +16,10 @@ export class CourseListComponent implements OnInit {
 allCourse: Course[] =[];
 deleteModal: any;
 idTodelete: number =0;
+allSubjects: Subjects[]=[];
 
-
-  constructor(private courseService: CourseService) { }
+  constructor(private courseService: CourseService,
+    private subjectService: SubjectService) { }
 
   ngOnInit(): void {
     this.deleteModal = new window.bootstrap.Modal(
