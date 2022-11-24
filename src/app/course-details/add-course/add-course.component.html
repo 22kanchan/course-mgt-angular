@@ -11,9 +11,9 @@
       </div>
       <div class="mb-3">
         <label for="txtQuantity" class="form-label">Subjects</label>
-        <mat-selection-list #shoes>
-          <mat-list-option *ngFor="let shoe of typesOfShoes">
-            {{shoe}}
+        <mat-selection-list #shoes (selectionChange)="selectionChange($event)">
+          <mat-list-option *ngFor="let subject of allSubjects" [value]="subject.id">
+            {{subject.subjectName}}
           </mat-list-option>
         </mat-selection-list>        
         <p>
