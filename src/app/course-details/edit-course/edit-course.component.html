@@ -17,6 +17,17 @@
         <label for="txtPrice" class="form-label">Cost</label>
         <input type="number" name="cost" [(ngModel)] = "courseForm.courseCost" class="form-control" id="txtPrice" />
       </div>
+      <div class="mb-3">
+        <label for="txtQuantity" class="form-label">Subjects</label>
+        <mat-selection-list #shoes (selectionChange)="selectionChange($event)">
+          <mat-list-option *ngFor="let subject of allSubjects" [value]="subject.id" [selected]="(listSubjects.length>0 && listSubjects.includes(subject.id))?true:false">
+            {{subject.subjectName}}
+          </mat-list-option>
+        </mat-selection-list>        
+        <p>
+          Options selected: {{shoes.selectedOptions.selected.length}}
+        </p>
+      </div>
       <button type="button" (click)="update()" class="btn btn-primary">Update</button>
     </form>
 </div>

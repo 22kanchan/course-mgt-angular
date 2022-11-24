@@ -62,11 +62,7 @@ export class AddCourseComponent implements OnInit {
     }
     else if (!event.options[0].selected) {
       if (this.listSubjects?.includes(event.options[0].value))
-        this.listSubjects = this.listSubjects.filter(item => item !== event.options.value)
+        this.listSubjects = this.listSubjects.filter(item => item !== event.options[0].value)
     }
-    console.log(this.listSubjects)
   }
-
-
-  typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 }
