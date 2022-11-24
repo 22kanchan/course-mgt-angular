@@ -32,32 +32,41 @@
       "courseName": "BTech",
       "courseCategory": "Architecture",
       "courseCost": 50000,
-      "courseDuration": "5 years"
+      "courseDuration": "5 years",
+      "courseSubjects": [
+        1,
+        2,
+        3
+      ]
     },
     {
       "id": 2,
       "courseName": "Btech",
       "courseCategory": "Mechanical",
       "courseCost": 80000,
-      "courseDuration": "5 years"
+      "courseDuration": "5 years",
+      "courseSubjects": []
     },
     {
       "id": 4,
       "courseName": "BCA",
       "courseCategory": "Computer application",
-      "courseCost": 40000
+      "courseCost": 40000,
+      "courseSubjects": []
     },
     {
       "id": 6,
       "courseName": "MCA ",
       "courseCategory": "Computer application",
-      "courseCost": 60000
+      "courseCost": 60000,
+      "courseSubjects": []
     },
     {
       "id": 7,
       "courseName": "BBA",
       "courseCategory": "Management ",
-      "courseCost": 60000
+      "courseCost": 60000,
+      "courseSubjects": []
     }
   ],
   "subjects": [
