@@ -67,6 +67,4 @@ export class AddCourseComponent implements OnInit {
     console.log(this.listSubjects)
   }
 
-
-  typesOfShoes = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
 }
