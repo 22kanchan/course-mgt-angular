@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
     <div class="row mt-2">
         <div class="col col-md-4 offset-md-4">
           <a class="btn btn-primary" routerLink="./addfaq">Add</a>
@@ -26,24 +26,60 @@
     </table>
   </div>
   
+-->
+<ng-container matColumnDef="add">
+    <button mat-icon-button color="primary" routerLink="./addfaq">Add
+        <mat-icon class="mat-18">reorder</mat-icon>
+    </button>
+</ng-container>
+  <table mat-table [dataSource]="allFaq">
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="question">
+      <th mat-header-cell *matHeaderCellDef> Question </th>
+      <td mat-cell *matCellDef="let element"> {{element.question}} </td>
+    </ng-container>
+    <ng-container matColumnDef="answer">
+      <th mat-header-cell *matHeaderCellDef> Answer </th>
+      <td mat-cell *matCellDef="let element"> {{element.answer}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element">
+        <button mat-icon-button color="accent" [routerLink]="['./editfaq', element.id]">
+            <mat-icon class="mat-18">system_update</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef> Delete </th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button color="warn" (click)="openDeleteModal(element.id)">
+              <mat-icon class="mat-18">delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+</table>
 
 
-  <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title" id="exampleModalLabel">Warning!</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-         <h3> Are you sure to delete the item?</h3>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
-        </div>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title" id="exampleModalLabel">Warning!</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <h3> Are you sure to delete the item?</h3>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
       </div>
     </div>
   </div>
-  
+</div> 

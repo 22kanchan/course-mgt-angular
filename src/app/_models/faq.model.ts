@@ -1,8 +1,6 @@
-import { Role } from './role';
-
+export class Faq{
     id!: number;
     question!: string;
-    role!: Role;
     answer!: string;
 }
 

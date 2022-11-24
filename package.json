@@ -24,6 +24,7 @@
     "@coreui/angular": "^4.2.13",
     "@coreui/coreui": "^4.2.2",
     "bootstrap": "^5.2.2",
+    "bootstrap-modal-backdrop": "^1.0.1",
     "mdb-angular-ui-kit": "^3.0.0",
     "ngx-mat-select-search": "^5.0.0",
     "ngx-slick-carousel": "^0.6.0",

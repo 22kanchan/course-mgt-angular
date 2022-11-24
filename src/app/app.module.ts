@@ -11,7 +11,6 @@ import { MatSidenavModule} from '@angular/material/sidenav';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-import { } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -79,7 +78,6 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
-    BrowserAnimationsModule,
     HttpClientModule,
     MatButtonModule,
     MatIconModule,
@@ -90,7 +88,8 @@ import { ErrorInterceptor } from './_helpers/error.interceptor';
     MatInputModule,
     ReactiveFormsModule,
     MdbCarouselModule,
-    MatTableModule
+    MatTableModule,
+    MatInputModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

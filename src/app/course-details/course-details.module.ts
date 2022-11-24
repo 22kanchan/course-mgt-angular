@@ -6,7 +6,12 @@ import { MatListModule } from '@angular/material/list';
 import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
-
+import { MatIconModule } from '@angular/material/icon';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule} from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 import { CourseDetailsRoutingModule } from './course-details-routing.module';
 import { CourseListComponent } from './course-list/course-list.component';
 import { EditCourseComponent } from './edit-course/edit-course.component';
@@ -30,6 +35,11 @@ import { LayoutComponent } from './layout/layout.component';
     NgxMatSelectSearchModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatIconModule,
+    MatTableModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule
   ]
 })
 export class CourseDetailsModule { }

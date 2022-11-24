@@ -17,7 +17,7 @@ allCourse: Course[] =[];
 deleteModal: any;
 idTodelete: number =0;
 allSubjects: Subjects[]=[];
-
+public displayedColumns =['id','name','category','cost','duration','subjects','edit','delete']
   constructor(private courseService: CourseService,
     private subjectService: SubjectService) { }
 
