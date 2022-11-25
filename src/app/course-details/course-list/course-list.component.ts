@@ -4,6 +4,7 @@ import { CourseService } from 'src/app/_services/course.service';
 import { SubjectService } from 'src/app/_services/subject.service';
 import { Subjects } from 'src/app/_models/subjects';
 
+declare let Razorpay: any;
 declare var window: any;
  
 @Component({
@@ -16,8 +17,11 @@ export class CourseListComponent implements OnInit {
 allCourse: Course[] =[];
 deleteModal: any;
 idTodelete: number =0;
+searchText='';
 allSubjects: Subjects[]=[];
 public displayedColumns =['id','name','category','cost','duration','subjects','edit','delete']
+
+
   constructor(private courseService: CourseService,
     private subjectService: SubjectService) { }
 
@@ -34,7 +38,9 @@ public displayedColumns =['id','name','category','cost','duration','subjects','e
     });
   }
 
-
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
+  }
   openDeleteModal(id: number){
     this.idTodelete = id;
     this.deleteModal.show();

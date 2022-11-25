@@ -29,12 +29,18 @@
       </tbody>
     </table>
   </div> -->
-
+  <div class="vh-100" style="background-color:#54B4D3;">
   <ng-container matColumnDef="add">
     <button mat-icon-button color="primary" routerLink="/course/addCourse">Add
         <mat-icon class="mat-18">reorder</mat-icon>
     </button>
 </ng-container>
+<div fxLayout fxLayoutAlign="center center">
+  <mat-form-field fxFlex="40%">
+    <input matInput type="text" [(ngModel)]="searchText" autocomplete="off" placeholder="Filter" autofocus>
+  </mat-form-field>
+</div>
+
   <table mat-table [dataSource]="allCourse">
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
@@ -80,6 +86,9 @@
         </td>
       </ng-container>
 </table>
+</div>
+
+
   <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">

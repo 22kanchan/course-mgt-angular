@@ -14,7 +14,7 @@ export class FaqListComponent implements OnInit {
 allFaq: Faq[] = [];
 deleteModal: any;
 idTodelete:number=0;
-public displayedColumns = ['id','question','answer','edit','delete']
+public displayedColumns = ['question','answer','edit','delete']
   constructor(private faqService: FaqService) { }
 
   ngOnInit(): void {

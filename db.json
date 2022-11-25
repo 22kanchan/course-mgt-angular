@@ -6,11 +6,6 @@
       "answer": "Depends on which course u want to enroll in"
     },
     {
-      "id": 2,
-      "question": "How to get the details of the subjects are there in particular course?",
-      "answer": "You can visit our detailed website of course there u will get the details."
-    },
-    {
       "id": 3,
       "question": "What is the fees of the courses and duration?",
       "answer": "You click on particular category of course there u will get the details."
@@ -19,6 +14,11 @@
       "id": 4,
       "question": "dsvasdvsda",
       "answer": "dacasdv"
+    },
+    {
+      "id": 6,
+      "question": "how r u ?",
+      "answer": " iam fine"
     }
   ],
   "course": [
@@ -62,6 +62,18 @@
       "courseCategory": "Management ",
       "courseCost": 60000,
       "courseSubjects": []
+    },
+    {
+      "id": 8,
+      "courseName": "Mba",
+      "courseCategory": "Management ",
+      "courseCost": 40000,
+      "courseDuration": "3",
+      "courseSubjects": [
+        2,
+        4,
+        5
+      ]
     }
   ],
   "subjects": [
